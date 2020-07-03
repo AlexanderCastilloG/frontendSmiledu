@@ -1,0 +1,26 @@
+<div class="animated fadeIn fast" *ngIf="estado">
+    <button mat-button [routerLink]="['home']">ATRÁS</button>
+    <h2>Datos personales</h2>
+
+    <div class="container">
+        <div class="dato1">
+            <div>
+                <img src="/assets/images/user.png" [alt]="colaborador?.nombres">
+                <p>{{ colaborador?.cargo }}</p>
+            </div>
+            <section>
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="editar()">EDITAR</button>
+                </div>
+            </section>
+        </div>
+        <div class="dato2">
+            <ul>
+                <li>{{ colaborador?.nombres | capitalizado}}</li>
+                <li>{{ colaborador?.apellidos | capitalizado}}</li>
+                <li>{{ colaborador?.salario | salario }}</li>
+                <li>{{ colaborador?.correo }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

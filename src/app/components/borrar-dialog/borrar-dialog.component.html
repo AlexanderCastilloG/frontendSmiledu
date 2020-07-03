@@ -1,0 +1,6 @@
+<p>¿Deseas borrar el registro?</p>
+
+<div class="example-button-row">
+    <button mat-button (click)="cerrar()">CANCELAR</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="borrar()">ACEPTAR</button>
+</div>

@@ -1,0 +1,35 @@
+h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+.container .dato1 {
+    width: 25%;
+}
+
+.container .dato2 {
+    align-self: flex-start;
+}
+
+img {
+    max-width: 100%;
+}
+
+.enlace {
+    text-decoration: none;
+    color: #000;
+}
+
+.enlace:hover {
+    cursor: pointer;
+    color: white;
+    border: 2px solid #2979FF;
+    padding: 0.5rem 2rem;
+}
+
+ul {
+    list-style: none;
+}

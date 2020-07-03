@@ -1,0 +1,57 @@
+<div class="animated fadeIn fast">
+    <section>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="registrar()">REGISTRAR</button>
+        </div>
+    </section>
+
+    <div class="mat-elevation-z8" *ngIf="totalColaboradores > 0; else elseTemplate">
+        <table mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="nombres">
+                <th mat-header-cell *matHeaderCellDef> Nombres </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombres}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="salario">
+                <th mat-header-cell *matHeaderCellDef> Salario </th>
+                <td mat-cell *matCellDef="let element"> {{element.salario | salario}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef> Estado </th>
+                <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cargo">
+                <th mat-header-cell *matHeaderCellDef> Cargo </th>
+                <td mat-cell *matCellDef="let element"> {{element.cargo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="correo">
+                <th mat-header-cell *matHeaderCellDef> Correo </th>
+                <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ver">
+                <th mat-header-cell *matHeaderCellDef> Ver </th>
+                <td mat-cell *matCellDef="let element"> <a [routerLink]="['/colaborador', element.id]">Ver perfil</a> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="borrar">
+                <th mat-header-cell *matHeaderCellDef> Borrar </th>
+                <td mat-cell *matCellDef="let element"> <span class="enlace" (click)="onDelete(element.id)">Borrar</span> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [length]="totalColaboradores" [pageSize]="colaboradoresPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"></mat-paginator>
+    </div>
+
+    <ng-template #elseTemplate>
+        No hay Colaboradores :(
+    </ng-template>
+
+</div>

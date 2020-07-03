@@ -1,0 +1,50 @@
+/* .example-form {
+    padding-top: 2rem;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.controles-container {
+    width: 100%;
+    padding: 5%;
+}
+
+form.normal-form {
+    margin: 10px;
+}
+
+.controles-container>* {
+    width: 100%;
+} */
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.container .hijos {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
+}
+
+mat-error {
+    width: 100%;
+}
+
+.campos {
+    color: red;
+}
